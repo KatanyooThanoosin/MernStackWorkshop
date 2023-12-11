@@ -6,6 +6,18 @@ require('dotenv').config();
 
 const app = express();
 
+//database
+mongoose.connect(process.env.CONNECTION_STRING,{
+    useNewUrlParser: true,
+    useUnifiedTopology: false,
+})
+.then(() => {
+    console.log('connect database succesfully');
+})
+.catch((err) => {
+    console.log('Error connecting database: ' + err.message)
+});
+
 //middleware
 app.use(express.json());
 app.use(cors());

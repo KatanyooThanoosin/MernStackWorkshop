@@ -4,6 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+const blogRoute = require('./route/blog');
+
 const app = express();
 
 //database
@@ -24,11 +26,7 @@ app.use(cors());
 app.use(morgan("dev"));
 
 //route
-app.get("*",(req, res) => {
-    res.json({
-        data: "Hello World"
-    })
-})
+app.use("/api",blogRoute);
 
 const port = process.env.PORT || 5500;
 app.listen(port,()=>{

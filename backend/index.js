@@ -20,7 +20,7 @@ mongoose.connect(process.env.CONNECTION_STRING,{
     console.log('Error connecting database: ' + err.message)
 });
 
-//middleware
+//middleware 
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));

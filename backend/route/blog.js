@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const { create } = require('../controller/blogController');
 
-router.get('/blog', (req, res) => {
-    res.json({
-        data: "get blog routes",
-    });  
-});
+router.get('/blog', create);
 
 module.exports = router;

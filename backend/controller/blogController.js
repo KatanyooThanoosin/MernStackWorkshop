@@ -1,6 +1,6 @@
 
 exports.create = (req,res) => {
     res.json({
-        data: "Hello blog controller"
-    })
+        data: req.body
+    });
 }
